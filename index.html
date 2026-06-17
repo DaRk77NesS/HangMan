@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAINFRAME // TERMINAL</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="terminal-frame">
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+
+        <div class="terminal-screen">
+
+            <div id="console-stream" class="stream-layout"></div>
+
+            <div id="content-core" class="hidden">
+
+                <header class="banner-panel">
+                    <pre class="ascii-logo">
+  _    _          _   _  _____ __  __          _   _   <span id="network-dot" class="dot"></span>
+ | |  | |   /\   | \ | |/ ____|  \/  |   /\   | \ | |
+ | |__| |  /  \  |  \| | |  __| \  / |  /  \  |  \| |
+ |  __  | / /\ \ | . ` | | |_ | |\/| | / /\ \ | . ` |
+ | |  | |/ ____ \| |\  | |__| | |  | |/ ____ \| |\  |
+ |_|  |_/_/    \_\_| \_|\_____|_|  |_/_/    \_\_| \_|
+                    </pre>
+                    <div class="subtitle">--- SYSTEM ARCHITECTURE KEY v6.5 ---</div>
+                </header>
+
+                <div id="menu-card" class="menu-layout">
+                    <div class="card-border-text">┌──[ SELECT INTERFACE OPERATION ]────────────────────────┐</div>
+                    <div class="menu-options">
+                        <button onclick="startGame(1)" class="menu-btn"><span class="btn-num">1</span> HARD MODE <span
+                                class="btn-desc">// LIMITED EXTRACTS</span></button>
+                        <button onclick="startGame(2)" class="menu-btn"><span class="btn-num">2</span> EASY MODE <span
+                                class="btn-desc">// ENDLESS DECRYPT</span></button>
+                    </div>
+                    <div class="card-border-text">└───────────────────────────────────────────────────────┘</div>
+                </div>
+
+                <div id="game-card" class="game-layout hidden">
+                    <div class="stats-dashboard">
+                        <div><strong>[MODE]:</strong> <span id="display-mode">--</span></div>
+                        <div id="stability-wrapper"><strong>[STABILITY]:</strong> <span id="hp-bar-container"><span
+                                    id="hp-bar"></span></span> <span id="lives-count">--</span></div>
+                        <div><strong>[ANALYZED]:</strong> <span id="used-letters" class="amber-text">None</span></div>
+                    </div>
+
+                    <div id="gallows-panel" class="gallows-container">
+                        <pre id="gallows-art"></pre>
+                    </div>
+
+                    <div class="decrypt-section">
+                        <div class="section-label">➔ EXTRACTED SEGMENTS:</div>
+                        <div id="word-display" class="green-glow">_ _ _ _</div>
+                    </div>
+
+                    <div class="input-console">
+                        <span class="prompt">❯ enter key letter:</span>
+                        <input type="text" id="console-input" maxlength="1" autocomplete="off">
+                    </div>
+
+                    <div id="message-log" class="msg-log"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>
